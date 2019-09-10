@@ -32,7 +32,7 @@ dimdict_inverted = dict(map(reversed, dimdict.items()))
 
 # keyboard for blur power selection
 blur_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-blur_select.add('1', '2', '3', '4', '5', '6')
+blur_select.add('0','1', '2', '3', '4', '5')
 
 # keyboard for dim power selection
 dim_select = types.ReplyKeyboardMarkup(one_time_keyboard=True)
@@ -183,7 +183,7 @@ def dim_choose_save(m):
 
 def blur(image, power):
 	"""blurs image using pillow library"""
-	radius = int((image.size[1] / 1000) * (power * 2))
+	radius = int((image.size[1] / 1000) * (power * 3))
 	return image.filter(ImageFilter.GaussianBlur(radius))
 
 def dim(image, power):
